@@ -1,6 +1,6 @@
-### Assignment 2
-## Device: Samsung S20
-## Android Version: Android 13
+# Assignment 2
+### Device: Samsung S20
+### Android Version: Android 13
 
 This app is split up into 2 activities. MainActivity.kt and ChallengeActivity.kt, in the main activity 
 I declared both of the intent actions, defined as onExplicitClick and onImplicitClick. Then in the MainScreen
