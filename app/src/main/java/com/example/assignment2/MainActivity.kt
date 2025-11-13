@@ -29,6 +29,10 @@ class MainActivity : ComponentActivity() {
                     onImplicitClick = {
                         val intent = Intent("com.example.assignment2.SHOW_CHALLENGES")
                         startActivity(intent)
+                    },
+                    onViewImageClick = {
+                        val intent = Intent(this, ViewImageActivity::class.java)
+                        startActivity(intent)
                     }
                 )
             }
@@ -37,7 +41,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(onExplicitClick: () -> Unit, onImplicitClick: () -> Unit) {
+fun MainScreen(onExplicitClick: () -> Unit, onImplicitClick: () -> Unit, onViewImageClick: () -> Unit) {
     androidx.compose.foundation.layout.Column(
         modifier = androidx.compose.ui.Modifier
             .fillMaxSize()
@@ -58,6 +62,12 @@ fun MainScreen(onExplicitClick: () -> Unit, onImplicitClick: () -> Unit) {
 
         Button(onClick = onImplicitClick) {
             Text(text = "Start Activity Implicitly")
+        }
+
+        androidx.compose.foundation.layout.Spacer(modifier = androidx.compose.ui.Modifier.height(12.dp))
+
+        Button(onClick = onViewImageClick) {
+            Text(text = "View Image Activity")
         }
     }
 }
