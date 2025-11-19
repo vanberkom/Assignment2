@@ -20,7 +20,7 @@ class StartHomeTest {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         device = UiDevice.getInstance(instrumentation)
 
-        // Go to home
+        // Go to home screen
         device.pressHome()
 
         device.wait(Until.hasObject(By.pkg(device.launcherPackageName)), 3000)
