@@ -1,6 +1,7 @@
 package com.example.assignment2
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,9 +17,18 @@ import com.example.assignment2.ui.theme.Assignment2Theme
 
 
 class MainActivity : ComponentActivity() {
+
+    private val CUSTOM_PERM = "com.example.assignment2.MSE412"
+    private val PERM_CODE = 100
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        if (checkSelfPermission(CUSTOM_PERM) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(arrayOf(CUSTOM_PERM), PERM_CODE)
+        }
+
         setContent {
             Assignment2Theme {
                 MainScreen(
